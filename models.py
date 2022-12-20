@@ -11,4 +11,4 @@ class Item(Base):
     age=Column(Integer,nullable=False)
 
     def __repr__(self):
-        return f"<Item name={self.name} price={self.age}>"
+        return f"<Item name={self.name} age={self.age}>"
