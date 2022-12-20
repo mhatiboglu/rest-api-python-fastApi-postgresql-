@@ -1,8 +1,14 @@
 from sqlalchemy.orm import declarative_base
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+import os
 
-engine=create_engine("postgresql://omnicomFifa:omnicom1234@fifa-database-1.c27k5yd9sicz.eu-west-2.rds.amazonaws.com/fifadb",
+user=os.environ["POSTGRESQL_USER"]
+key=os.environ["POSTGRESQL_PASSWORD"]
+host=os.environ["POSTGRESQL_HOST"]
+db=os.environ["POSTGRESQL_DB"]
+
+engine=create_engine(f"postgresql://{user}:{key}@{host}/{db}",
     echo=True
 )
 
